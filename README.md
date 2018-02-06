@@ -38,7 +38,9 @@ Create `flatten-dev-deps.config.js` in the root of your project:
 ```js
 module.exports = {
   quiet: false,  // default
-  modifyPackageJson: false,  // default - whether to pass '--save' to 'npm install <devDeps>'
+
+  modifyPackageJson: false,  // default - whether to pass '--save-dev' to 'npm install <devDeps>'
+
   preFlatten: ({depVersionMap, exec, fs}) => {
     // Runs before re-installing each dev dependency, can modify which dependencies get installed at
     // which version.
@@ -50,8 +52,9 @@ module.exports = {
       depVersionMap[depName] = version
     })
   },
+
   preShrinkwrap: ({depVersionMap, exec, fs}) => {
-    // Runs before 'npm shrinkwrap'
+    // Runs before 'npm shrinkwrap --dev'
     exec('rm -rf node_modules/fsevents')
   })
 }
