@@ -11,10 +11,10 @@
     "start": "npm run build -- --watch",
     "clean": "rimraf dist",
     "prepare": "npm run build",
-    "patch": "VERSION=patch npm run publish",
-    "minor": "VERSION=minor npm run publish",
-    "major": "VERSION=major npm run publish",
-    "publish": "npm whoami && npm version $VERSION && npm publish && git push"
+    "patch": "VERSION=patch npm run publish:version",
+    "minor": "VERSION=minor npm run publish:version",
+    "major": "VERSION=major npm run publish:version",
+    "publish:version": "npm whoami && npm version $VERSION && npm publish && git push"
   },
   "repository": {
     "type": "git",
