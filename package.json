@@ -1,6 +1,6 @@
 {
   "name": "flatten-dev-deps",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Flatten dev dependencies",
   "main": "dist/index.js",
   "bin": {
