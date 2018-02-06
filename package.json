@@ -1,0 +1,43 @@
+{
+  "name": "flatten-dev-deps",
+  "version": "1.0.0",
+  "description": "Flatten dev dependencies",
+  "main": "dist/index.js",
+  "bin": {
+    "flatten-dev-deps": "dist/index.js"
+  },
+  "scripts": {
+    "build": "npm run clean && BABEL_ENV=production babel src --out-dir dist",
+    "start": "npm run build -- --watch",
+    "clean": "rimraf dist",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:noahsug/flatten-dev-deps.git"
+  },
+  "keywords": [
+    "flatten",
+    "devDependencies",
+    "dependencies",
+    "deps",
+    "dev",
+    "package",
+    "package.json"
+  ],
+  "author": "Noah Sugarman <noahsug@gmail.com.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/noahsug/flatten-dev-deps/issues"
+  },
+  "homepage": "https://github.com/noahsug/flatten-dev-deps#readme",
+  "dependencies": {
+    "cosmiconfig": "^4.0.0",
+    "shelljs": "^0.8.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-airbnb": "^2.4.0",
+    "rimraf": "^2.6.2"
+  }
+}
